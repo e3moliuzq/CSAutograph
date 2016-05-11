@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1800D5391CE175B3003A764A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D5381CE175B3003A764A /* main.m */; };
+		1800D53C1CE175B3003A764A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D53B1CE175B3003A764A /* AppDelegate.m */; };
+		1800D53F1CE175B3003A764A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D53E1CE175B3003A764A /* ViewController.m */; };
+		1800D5421CE175B3003A764A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1800D5401CE175B3003A764A /* Main.storyboard */; };
+		1800D5441CE175B3003A764A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1800D5431CE175B3003A764A /* Assets.xcassets */; };
+		1800D5471CE175B3003A764A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1800D5451CE175B3003A764A /* LaunchScreen.storyboard */; };
+		1800D5511CE1769D003A764A /* CSAutographDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D5501CE1769D003A764A /* CSAutographDrawView.m */; };
+		1800D5541CE17938003A764A /* MyDrawInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D5531CE17938003A764A /* MyDrawInfo.m */; };
+		1800D55A1CE1DA81003A764A /* icon_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1800D5591CE1DA81003A764A /* icon_logo@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1800D5341CE175B3003A764A /* CSAutograph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSAutograph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1800D5381CE175B3003A764A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1800D53A1CE175B3003A764A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1800D53B1CE175B3003A764A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1800D53D1CE175B3003A764A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1800D53E1CE175B3003A764A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1800D5411CE175B3003A764A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1800D5431CE175B3003A764A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1800D5461CE175B3003A764A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1800D5481CE175B3003A764A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1800D54F1CE1769D003A764A /* CSAutographDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAutographDrawView.h; sourceTree = "<group>"; };
+		1800D5501CE1769D003A764A /* CSAutographDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAutographDrawView.m; sourceTree = "<group>"; };
+		1800D5521CE17938003A764A /* MyDrawInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDrawInfo.h; sourceTree = "<group>"; };
+		1800D5531CE17938003A764A /* MyDrawInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDrawInfo.m; sourceTree = "<group>"; };
+		1800D5591CE1DA81003A764A /* icon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_logo@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1800D5311CE175B3003A764A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1800D52B1CE175B3003A764A = {
+			isa = PBXGroup;
+			children = (
+				1800D5361CE175B3003A764A /* CSAutograph */,
+				1800D5351CE175B3003A764A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1800D5351CE175B3003A764A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1800D5341CE175B3003A764A /* CSAutograph.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1800D5361CE175B3003A764A /* CSAutograph */ = {
+			isa = PBXGroup;
+			children = (
+				1800D5581CE1DA81003A764A /* Res */,
+				1800D54E1CE17675003A764A /* CSAutographView */,
+				1800D53A1CE175B3003A764A /* AppDelegate.h */,
+				1800D53B1CE175B3003A764A /* AppDelegate.m */,
+				1800D53D1CE175B3003A764A /* ViewController.h */,
+				1800D53E1CE175B3003A764A /* ViewController.m */,
+				1800D5401CE175B3003A764A /* Main.storyboard */,
+				1800D5431CE175B3003A764A /* Assets.xcassets */,
+				1800D5451CE175B3003A764A /* LaunchScreen.storyboard */,
+				1800D5481CE175B3003A764A /* Info.plist */,
+				1800D5371CE175B3003A764A /* Supporting Files */,
+			);
+			path = CSAutograph;
+			sourceTree = "<group>";
+		};
+		1800D5371CE175B3003A764A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1800D5381CE175B3003A764A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1800D54E1CE17675003A764A /* CSAutographView */ = {
+			isa = PBXGroup;
+			children = (
+				1800D54F1CE1769D003A764A /* CSAutographDrawView.h */,
+				1800D5501CE1769D003A764A /* CSAutographDrawView.m */,
+				1800D5521CE17938003A764A /* MyDrawInfo.h */,
+				1800D5531CE17938003A764A /* MyDrawInfo.m */,
+			);
+			path = CSAutographView;
+			sourceTree = SOURCE_ROOT;
+		};
+		1800D5581CE1DA81003A764A /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				1800D5591CE1DA81003A764A /* icon_logo@2x.png */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1800D5331CE175B3003A764A /* CSAutograph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1800D54B1CE175B3003A764A /* Build configuration list for PBXNativeTarget "CSAutograph" */;
+			buildPhases = (
+				1800D5301CE175B3003A764A /* Sources */,
+				1800D5311CE175B3003A764A /* Frameworks */,
+				1800D5321CE175B3003A764A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSAutograph;
+			productName = CSAutograph;
+			productReference = 1800D5341CE175B3003A764A /* CSAutograph.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1800D52C1CE175B3003A764A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = e3mo;
+				TargetAttributes = {
+					1800D5331CE175B3003A764A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 1800D52F1CE175B3003A764A /* Build configuration list for PBXProject "CSAutograph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1800D52B1CE175B3003A764A;
+			productRefGroup = 1800D5351CE175B3003A764A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1800D5331CE175B3003A764A /* CSAutograph */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1800D5321CE175B3003A764A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1800D5471CE175B3003A764A /* LaunchScreen.storyboard in Resources */,
+				1800D5441CE175B3003A764A /* Assets.xcassets in Resources */,
+				1800D55A1CE1DA81003A764A /* icon_logo@2x.png in Resources */,
+				1800D5421CE175B3003A764A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1800D5301CE175B3003A764A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1800D53F1CE175B3003A764A /* ViewController.m in Sources */,
+				1800D53C1CE175B3003A764A /* AppDelegate.m in Sources */,
+				1800D5511CE1769D003A764A /* CSAutographDrawView.m in Sources */,
+				1800D5391CE175B3003A764A /* main.m in Sources */,
+				1800D5541CE17938003A764A /* MyDrawInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1800D5401CE175B3003A764A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1800D5411CE175B3003A764A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1800D5451CE175B3003A764A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1800D5461CE175B3003A764A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1800D5491CE175B3003A764A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1800D54A1CE175B3003A764A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1800D54C1CE175B3003A764A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CSAutograph/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.e3mo.CSAutograph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1800D54D1CE175B3003A764A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CSAutograph/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.e3mo.CSAutograph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1800D52F1CE175B3003A764A /* Build configuration list for PBXProject "CSAutograph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1800D5491CE175B3003A764A /* Debug */,
+				1800D54A1CE175B3003A764A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1800D54B1CE175B3003A764A /* Build configuration list for PBXNativeTarget "CSAutograph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1800D54C1CE175B3003A764A /* Debug */,
+				1800D54D1CE175B3003A764A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1800D52C1CE175B3003A764A /* Project object */;
+}
