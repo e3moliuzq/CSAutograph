@@ -10,9 +10,13 @@
 #import "MyDrawInfo.h"
 
 
+@interface CSAutographDrawView () {
+    
+    CGContextRef context;  //创建一块画布
+}
+@end
 
 @implementation CSAutographDrawView
-
 
 
 
@@ -24,7 +28,7 @@
         line_color = [UIColor blackColor];
         line_width = 4.f;
         
-//        [self initMenu];
+        [self initMenu];
     }
     
     return self;
@@ -182,8 +186,12 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();  //创建一块画布
+    if (!context) {
+//        CGContextRelease(context);
+//        context = nil;
+        
+        context = UIGraphicsGetCurrentContext();  //创建一块画布
+    }
     
     for (MyDrawInfo *drawInfo in _pathArray) {
         CGContextAddPath(context, drawInfo.path.CGPath);

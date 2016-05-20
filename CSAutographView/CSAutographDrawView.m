@@ -12,7 +12,6 @@
 
 @interface CSAutographDrawView () {
     
-    CGContextRef context;  //创建一块画布
 }
 @end
 
@@ -133,8 +132,8 @@
         [self setMenuHidden:NO];
     }
     
-    UIImage *logo = [UIImage imageNamed:@"icon_logo@2x.png"];
-    CGRect logoRect = CGRectMake(20, 0, self.frame.size.width-40, 0);
+    UIImage *logo = [UIImage imageNamed:@"icon_popup_sign@2x.png"];
+    CGRect logoRect = CGRectMake(50, 0, self.frame.size.width-100, 0);
     logoRect.size.height = logoRect.size.width/logo.size.width * logo.size.height;
     logoRect.origin.y = (self.frame.size.height-logoRect.size.height)/2;
     
@@ -186,12 +185,7 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    if (!context) {
-//        CGContextRelease(context);
-//        context = nil;
-        
-        context = UIGraphicsGetCurrentContext();  //创建一块画布
-    }
+    CGContextRef context = UIGraphicsGetCurrentContext();  //创建一块画布
     
     for (MyDrawInfo *drawInfo in _pathArray) {
         CGContextAddPath(context, drawInfo.path.CGPath);
