@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ILSaturationBrightnessPickerView.h"
+#import "ILHuePickerView.h"
 
-@interface CSAutographDrawView : UIView {
+@interface CSAutographDrawView : UIView <ILSaturationBrightnessPickerViewDelegate,ILHuePickerViewDelegate> {
     UIColor *line_color;
     float line_width;
     
@@ -22,6 +24,13 @@
     UIButton *clear_all_btn;
     UIButton *clear_last_btn;
     UIButton *restore_last_btn;
+    UIButton *color_btn;
+    UIButton *thickness_btn;
+    
+    UISlider *slider;
+    
+    ILSaturationBrightnessPickerView *colorPicker;
+    ILHuePickerView *huePicker;
 }
 @property (strong, nonatomic) NSMutableArray *pathArray;
 
@@ -37,7 +46,5 @@
 - (void)removeAll;
 - (void)removeLast;
 - (void)restoreLast;
-- (void)changeLineColor:(UIColor*)color;
-- (void)changeLineWidth:(float)width;
 
 @end

@@ -15,8 +15,12 @@
 		1800D5471CE175B3003A764A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1800D5451CE175B3003A764A /* LaunchScreen.storyboard */; };
 		1800D5511CE1769D003A764A /* CSAutographDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D5501CE1769D003A764A /* CSAutographDrawView.m */; };
 		1800D5541CE17938003A764A /* MyDrawInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1800D5531CE17938003A764A /* MyDrawInfo.m */; };
+		18D26F4D1D6E964E002FA639 /* ILColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D26F441D6E964E002FA639 /* ILColorPickerView.m */; };
+		18D26F4E1D6E964E002FA639 /* ILHuePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D26F461D6E964E002FA639 /* ILHuePickerView.m */; };
+		18D26F4F1D6E964E002FA639 /* ILSaturationBrightnessPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D26F481D6E964E002FA639 /* ILSaturationBrightnessPickerView.m */; };
+		18D26F501D6E964E002FA639 /* ILView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D26F4A1D6E964E002FA639 /* ILView.m */; };
+		18D26F511D6E964E002FA639 /* UIColor+GetHSB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D26F4C1D6E964E002FA639 /* UIColor+GetHSB.m */; };
 		18F24CDA1CE568AD004C15F7 /* icon_popup_sign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F24CD91CE568AD004C15F7 /* icon_popup_sign@2x.png */; };
-		18F24CDC1CE56B6F004C15F7 /* icon_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F24CDB1CE56B6F004C15F7 /* icon_logo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +38,17 @@
 		1800D5501CE1769D003A764A /* CSAutographDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAutographDrawView.m; sourceTree = "<group>"; };
 		1800D5521CE17938003A764A /* MyDrawInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDrawInfo.h; sourceTree = "<group>"; };
 		1800D5531CE17938003A764A /* MyDrawInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDrawInfo.m; sourceTree = "<group>"; };
+		18D26F431D6E964E002FA639 /* ILColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILColorPickerView.h; sourceTree = "<group>"; };
+		18D26F441D6E964E002FA639 /* ILColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILColorPickerView.m; sourceTree = "<group>"; };
+		18D26F451D6E964E002FA639 /* ILHuePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILHuePickerView.h; sourceTree = "<group>"; };
+		18D26F461D6E964E002FA639 /* ILHuePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILHuePickerView.m; sourceTree = "<group>"; };
+		18D26F471D6E964E002FA639 /* ILSaturationBrightnessPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSaturationBrightnessPickerView.h; sourceTree = "<group>"; };
+		18D26F481D6E964E002FA639 /* ILSaturationBrightnessPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSaturationBrightnessPickerView.m; sourceTree = "<group>"; };
+		18D26F491D6E964E002FA639 /* ILView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILView.h; sourceTree = "<group>"; };
+		18D26F4A1D6E964E002FA639 /* ILView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILView.m; sourceTree = "<group>"; };
+		18D26F4B1D6E964E002FA639 /* UIColor+GetHSB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GetHSB.h"; sourceTree = "<group>"; };
+		18D26F4C1D6E964E002FA639 /* UIColor+GetHSB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GetHSB.m"; sourceTree = "<group>"; };
 		18F24CD91CE568AD004C15F7 /* icon_popup_sign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_popup_sign@2x.png"; sourceTree = "<group>"; };
-		18F24CDB1CE56B6F004C15F7 /* icon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_logo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +107,7 @@
 		1800D54E1CE17675003A764A /* CSAutographView */ = {
 			isa = PBXGroup;
 			children = (
+				18D26F421D6E964E002FA639 /* ColorPicker */,
 				1800D5521CE17938003A764A /* MyDrawInfo.h */,
 				1800D5531CE17938003A764A /* MyDrawInfo.m */,
 				1800D54F1CE1769D003A764A /* CSAutographDrawView.h */,
@@ -105,10 +119,26 @@
 		1800D5581CE1DA81003A764A /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				18F24CDB1CE56B6F004C15F7 /* icon_logo@2x.png */,
 				18F24CD91CE568AD004C15F7 /* icon_popup_sign@2x.png */,
 			);
 			path = Res;
+			sourceTree = "<group>";
+		};
+		18D26F421D6E964E002FA639 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				18D26F431D6E964E002FA639 /* ILColorPickerView.h */,
+				18D26F441D6E964E002FA639 /* ILColorPickerView.m */,
+				18D26F451D6E964E002FA639 /* ILHuePickerView.h */,
+				18D26F461D6E964E002FA639 /* ILHuePickerView.m */,
+				18D26F471D6E964E002FA639 /* ILSaturationBrightnessPickerView.h */,
+				18D26F481D6E964E002FA639 /* ILSaturationBrightnessPickerView.m */,
+				18D26F491D6E964E002FA639 /* ILView.h */,
+				18D26F4A1D6E964E002FA639 /* ILView.m */,
+				18D26F4B1D6E964E002FA639 /* UIColor+GetHSB.h */,
+				18D26F4C1D6E964E002FA639 /* UIColor+GetHSB.m */,
+			);
+			path = ColorPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +201,6 @@
 				1800D5471CE175B3003A764A /* LaunchScreen.storyboard in Resources */,
 				1800D5441CE175B3003A764A /* Assets.xcassets in Resources */,
 				1800D5421CE175B3003A764A /* Main.storyboard in Resources */,
-				18F24CDC1CE56B6F004C15F7 /* icon_logo@2x.png in Resources */,
 				18F24CDA1CE568AD004C15F7 /* icon_popup_sign@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,11 +212,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D26F4E1D6E964E002FA639 /* ILHuePickerView.m in Sources */,
 				1800D53F1CE175B3003A764A /* ViewController.m in Sources */,
+				18D26F501D6E964E002FA639 /* ILView.m in Sources */,
 				1800D53C1CE175B3003A764A /* AppDelegate.m in Sources */,
 				1800D5511CE1769D003A764A /* CSAutographDrawView.m in Sources */,
 				1800D5391CE175B3003A764A /* main.m in Sources */,
 				1800D5541CE17938003A764A /* MyDrawInfo.m in Sources */,
+				18D26F4F1D6E964E002FA639 /* ILSaturationBrightnessPickerView.m in Sources */,
+				18D26F511D6E964E002FA639 /* UIColor+GetHSB.m in Sources */,
+				18D26F4D1D6E964E002FA639 /* ILColorPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

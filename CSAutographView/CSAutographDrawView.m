@@ -8,7 +8,7 @@
 
 #import "CSAutographDrawView.h"
 #import "MyDrawInfo.h"
-
+#import "UIColor+GetHSB.h"
 
 @interface CSAutographDrawView () {
     
@@ -17,7 +17,7 @@
 
 @implementation CSAutographDrawView
 
-
+#define SYS_LOGO_IMAGE_NAME         @"icon_popup_sign@2x.png"
 
 - (id)initWithFrame:(CGRect)frame {
     if ([super initWithFrame:frame]) {
@@ -45,6 +45,17 @@
 }
 
 - (void)setMenuHidden:(BOOL)hidden {
+    if (slider) {
+        [slider removeFromSuperview];
+        slider = nil;
+    }
+    if (colorPicker) {
+        [colorPicker removeFromSuperview];
+        colorPicker = nil;
+        
+        [huePicker removeFromSuperview];
+        huePicker = nil;
+    }
     [menu_view setHidden:hidden];
 }
 
@@ -59,7 +70,7 @@
     [self addSubview:menu_view];
     
     clear_all_btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [clear_all_btn setFrame:CGRectMake(10, 0, 60, 40)];
+    [clear_all_btn setFrame:CGRectMake(10, 0, 50, 40)];
     [clear_all_btn setTitle:@"清除" forState:UIControlStateNormal];
     [clear_all_btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [clear_all_btn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0.8 alpha:1] forState:UIControlStateHighlighted];
@@ -70,7 +81,7 @@
     [menu_view addSubview:clear_all_btn];
     
     clear_last_btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [clear_last_btn setFrame:CGRectMake(80, 0, 60, 40)];
+    [clear_last_btn setFrame:CGRectMake(70, 0, 50, 40)];
     [clear_last_btn setTitle:@"撤销" forState:UIControlStateNormal];
     [clear_last_btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [clear_last_btn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0.8 alpha:1] forState:UIControlStateHighlighted];
@@ -81,7 +92,7 @@
     [menu_view addSubview:clear_last_btn];
     
     restore_last_btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [restore_last_btn setFrame:CGRectMake(150, 0, 60, 40)];
+    [restore_last_btn setFrame:CGRectMake(130, 0, 50, 40)];
     [restore_last_btn setTitle:@"恢复" forState:UIControlStateNormal];
     [restore_last_btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [restore_last_btn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0.8 alpha:1] forState:UIControlStateHighlighted];
@@ -90,6 +101,28 @@
     [restore_last_btn setBackgroundColor:[UIColor clearColor]];
     [restore_last_btn addTarget:self action:@selector(restoreLast) forControlEvents:UIControlEventTouchUpInside];
     [menu_view addSubview:restore_last_btn];
+    
+    thickness_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [thickness_btn setFrame:CGRectMake(190, 0, 70, 40)];
+    [thickness_btn setTitle:@"笔粗:4.0" forState:UIControlStateNormal];
+    [thickness_btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [thickness_btn setTitleColor:[UIColor colorWithRed:0 green:0 blue:0.8 alpha:1] forState:UIControlStateHighlighted];
+    [thickness_btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    [thickness_btn.titleLabel setFont:[UIFont systemFontOfSize:16]];
+    [thickness_btn setBackgroundColor:[UIColor clearColor]];
+    [thickness_btn addTarget:self action:@selector(chooseThickness:) forControlEvents:UIControlEventTouchUpInside];
+    [menu_view addSubview:thickness_btn];
+    
+    color_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [color_btn setFrame:CGRectMake(270, 10, 20, 20)];
+    [color_btn setBackgroundColor:[UIColor blackColor]];
+    [color_btn addTarget:self action:@selector(chooseColor:) forControlEvents:UIControlEventTouchUpInside];
+    //不能和加圆角同时使用
+    color_btn.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
+    color_btn.layer.shadowOffset = CGSizeMake(0,0);//shadowOffset阴影偏移,x向右偏移x，y向下偏移y，默认(0, -3),这个跟shadowRadius配合使用
+    color_btn.layer.shadowOpacity = 1;//阴影透明度，默认0
+    color_btn.layer.shadowRadius = 2;//阴影半径，默认3
+    [menu_view addSubview:color_btn];
     
     [self changeMenuEnable];
 }
@@ -114,8 +147,7 @@
 
 - (UIImage *)snapshot {
     if (![self isAutograph]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请签名" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alert show];
+        
         return nil;
     }
     
@@ -132,7 +164,8 @@
         [self setMenuHidden:NO];
     }
     
-    UIImage *logo = [UIImage imageNamed:@"icon_popup_sign@2x.png"];
+    //添加logo用不到
+    UIImage *logo = [UIImage imageNamed:SYS_LOGO_IMAGE_NAME];
     CGRect logoRect = CGRectMake(50, 0, self.frame.size.width-100, 0);
     logoRect.size.height = logoRect.size.width/logo.size.width * logo.size.height;
     logoRect.origin.y = (self.frame.size.height-logoRect.size.height)/2;
@@ -211,6 +244,78 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     };
 }
 
+
+- (void)chooseThickness:(id)sender {
+    if (slider) {
+        [slider removeFromSuperview];
+        slider = nil;
+        return;
+    }
+    if (colorPicker) {
+        [colorPicker removeFromSuperview];
+        colorPicker = nil;
+        
+        [huePicker removeFromSuperview];
+        huePicker = nil;
+    }
+    
+    slider = [[UISlider alloc] initWithFrame:CGRectMake(20, self.frame.size.height-70, self.frame.size.width-40, 27)];
+    [slider setMaximumValue:24];
+    [slider setMinimumValue:1];
+    [slider setEnabled:YES];
+    [slider setUserInteractionEnabled:YES];
+    [slider setValue:line_width animated:NO];
+    [slider addTarget:self action:@selector(sliderChoose) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:slider];
+}
+
+- (void)sliderChoose {
+    line_width = [[NSString stringWithFormat:@"%.1f",slider.value] floatValue];
+    
+    [thickness_btn setTitle:[NSString stringWithFormat:@"笔粗:%.1f",line_width] forState:UIControlStateNormal];
+}
+
+- (void)chooseColor:(id)sender {
+    if (colorPicker) {
+        [colorPicker removeFromSuperview];
+        colorPicker = nil;
+        
+        [huePicker removeFromSuperview];
+        huePicker = nil;
+        
+        return;
+    }
+    if (slider) {
+        [slider removeFromSuperview];
+        slider = nil;
+    }
+    
+    HSBType hsb = [line_color HSB];
+    
+    huePicker = [[ILHuePickerView alloc] initWithFrame:CGRectMake(20, self.frame.size.height-80, self.frame.size.width-40, 40)];
+    huePicker.delegate = self;
+    huePicker.hue = hsb.hue;
+    [self addSubview:huePicker];
+    colorPicker = [[ILSaturationBrightnessPickerView alloc] initWithFrame:CGRectMake(20, self.frame.size.height-250, self.frame.size.width-40, 160)];
+    colorPicker.delegate = self;
+    colorPicker.hue = hsb.hue;
+    colorPicker.saturation = hsb.saturation;
+    colorPicker.brightness = hsb.brightness;
+    [self addSubview:colorPicker];
+}
+
+-(void)huePicked:(float)hue picker:(ILHuePickerView *)picker {
+    colorPicker.hue = hue;
+    
+    line_color = colorPicker.color;
+    [color_btn setBackgroundColor:line_color];
+}
+
+-(void)colorPicked:(UIColor *)newColor forPicker:(ILSaturationBrightnessPickerView *)picker {
+    line_color = newColor;
+    [color_btn setBackgroundColor:line_color];
+}
+
 - (void)clearAll {
     if (_pathArray && _pathArray.count > 0) {
         [_pathArray removeAllObjects];
@@ -266,15 +371,19 @@ static CGPoint midpoint(CGPoint p0, CGPoint p1) {
     }
 }
 
-- (void)changeLineColor:(UIColor*)color {
-    line_color = color;
-}
-
-- (void)changeLineWidth:(float)width {
-    line_width = width;
-}
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (colorPicker) {
+        [colorPicker removeFromSuperview];
+        colorPicker = nil;
+        
+        [huePicker removeFromSuperview];
+        huePicker = nil;
+    }
+    if (slider) {
+        [slider removeFromSuperview];
+        slider = nil;
+    }
+    
     UITouch *touch = [touches anyObject];
     previousPoint = [touch locationInView:self];
     path = [UIBezierPath bezierPath];
